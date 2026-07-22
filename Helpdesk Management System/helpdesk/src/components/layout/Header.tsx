@@ -1,0 +1,62 @@
+import Link from "next/link";
+import { getCurrentUser } from "@/lib/auth";
+import { HeaderClock } from "./HeaderClock";
+import { Search, Bell, Plus, ShieldCheck } from "lucide-react";
+
+export async function Header() {
+  const user = await getCurrentUser();
+  if (!user) return null;
+
+  return (
+    <header className="sticky top-0 z-30 border-b border-slate-800/80 bg-slate-950/60 backdrop-blur-xl">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        {/* Search Input Bar */}
+        <div className="flex items-center gap-4 flex-1 max-w-md">
+          <form action="/tickets" method="GET" className="relative w-full">
+            <Search className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+            <input
+              type="text"
+              name="search"
+              placeholder="Search tickets, technicians, topics..."
+              className="w-full rounded-xl border border-slate-800/80 bg-slate-900/80 pl-10 pr-4 py-2 text-xs text-slate-200 placeholder-slate-500 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500/50 transition-all"
+            />
+          </form>
+        </div>
+
+        {/* Right Section: System status, Clock, Actions */}
+        <div className="flex items-center gap-3">
+          {/* Status Indicator */}
+          <div className="hidden lg:flex items-center gap-2 rounded-xl border border-emerald-500/20 bg-emerald-500/10 px-3 py-1.5 text-xs text-emerald-400">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
+            </span>
+            <span className="font-medium">System Optimal</span>
+          </div>
+
+          {/* Clock Widget */}
+          <HeaderClock />
+
+          {/* Notifications Button */}
+          <button
+            type="button"
+            className="relative rounded-xl border border-slate-800/80 bg-slate-900/60 p-2 text-slate-400 hover:border-slate-700 hover:text-slate-200 transition-all"
+            title="Notifications"
+          >
+            <Bell className="h-4 w-4" />
+            <span className="absolute top-1.5 right-1.5 h-2 w-2 rounded-full bg-sky-400 ring-2 ring-slate-950" />
+          </button>
+
+          {/* Quick Create Button */}
+          <Link
+            href="/tickets/create"
+            className="flex items-center gap-2 rounded-xl bg-gradient-to-r from-sky-500 to-cyan-500 px-3.5 py-2 text-xs font-semibold text-white shadow-lg shadow-sky-500/25 hover:from-sky-400 hover:to-cyan-400 transition-all active:scale-95"
+          >
+            <Plus className="h-4 w-4" />
+            <span className="hidden sm:inline">New Ticket</span>
+          </Link>
+        </div>
+      </div>
+    </header>
+  );
+}
