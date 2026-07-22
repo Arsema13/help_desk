@@ -3,7 +3,7 @@ import type { NextRequest } from "next/server";
 
 const publicPaths = ["/login", "/register"];
 
-export function proxy(request: NextRequest) {
+export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const token = request.cookies.get("session")?.value;
 
