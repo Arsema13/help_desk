@@ -93,7 +93,7 @@ export function Sidebar({ user }: SidebarProps) {
             </div>
             <div className="flex flex-col">
               <span className="text-lg font-bold tracking-wider text-white">
-                HELPDESK<span className="text-sky-400">.AI</span>
+                HELPDESK
               </span>
               <span className="text-[10px] uppercase font-semibold text-slate-400 tracking-widest">
                 Manager Portal

@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Helpdesk.AI | Eden Hailu Portal",
+  title: "Helpdesk | Eden Hailu Portal",
   description: "Futuristic operations management & IT ticket portal",
   icons: {
     icon: "/icon.png",
