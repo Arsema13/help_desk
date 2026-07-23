@@ -8,12 +8,10 @@
   }
 }
 
-/* Ambient glow background overlay */
+/* Subtle background gradient */
 .bg-ambient-glow {
   background: 
-    radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.12) 0%, transparent 40%),
-    radial-gradient(circle at 90% 80%, rgba(249, 115, 22, 0.10) 0%, transparent 45%),
-    radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.06) 0%, transparent 50%),
     #07090e;
 }
 
@@ -29,8 +27,7 @@
 }
 
 .glass-card:hover {
-  border-color: rgba(56, 189, 248, 0.25);
-  box-shadow: 0 20px 50px -10px rgba(14, 165, 233, 0.15);
+  border-color: rgba(56, 189, 248, 0.2);
 }
 
 /* Glass input fields */
@@ -46,19 +43,6 @@
   outline: none;
   border-color: #38bdf8;
   box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
-}
-
-/* Glowing text and status accents */
-.text-glow-blue {
-  text-shadow: 0 0 12px rgba(56, 189, 248, 0.6);
-}
-
-.text-glow-amber {
-  text-shadow: 0 0 12px rgba(251, 191, 36, 0.6);
-}
-
-.glow-pill-blue {
-  box-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
 }
 
 /* Custom sleek dark scrollbar */

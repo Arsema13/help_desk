@@ -7,7 +7,7 @@ import { useFormStatus } from "react-dom";
 import { login } from "@/actions/auth";
 import { loginSchema, type LoginInput } from "@/schemas";
 import Link from "next/link";
-import { Sparkles, Shield, Wrench, User, LogIn } from "lucide-react";
+import { Shield, Wrench, User, LogIn } from "lucide-react";
 
 function SubmitButton() {
   const { pending } = useFormStatus();
@@ -48,7 +48,7 @@ export function LoginForm() {
       {/* Quick Demo Login Presets */}
       <div className="rounded-2xl border border-sky-500/20 bg-slate-900/60 p-4 backdrop-blur-xl">
         <span className="text-[11px] font-bold uppercase tracking-wider text-sky-400 flex items-center gap-1.5 mb-2.5">
-          <Sparkles className="h-3.5 w-3.5 text-sky-400 animate-pulse" /> 1-Click Demo Logins
+          1-Click Demo Logins
         </span>
 
         <div className="grid grid-cols-3 gap-1.5 sm:gap-2">

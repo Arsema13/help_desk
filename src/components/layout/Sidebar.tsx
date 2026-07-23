@@ -7,7 +7,6 @@ import {
   LayoutDashboard,
   Ticket,
   PlusCircle,
-  Sparkles,
   Menu,
   X,
 } from "lucide-react";
@@ -89,8 +88,8 @@ export function Sidebar({ user }: SidebarProps) {
             className="flex items-center gap-3 px-2 py-3 text-sky-400 hover:text-sky-300 transition-colors"
             onClick={() => setIsOpen(false)}
           >
-            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-tr from-sky-600 to-cyan-400 shadow-lg shadow-sky-500/30 ring-1 ring-white/20">
-              <Sparkles className="h-6 w-6 text-white" />
+            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-tr from-sky-600 to-cyan-400 shadow-lg ring-1 ring-white/20">
+              <LayoutDashboard className="h-6 w-6 text-white" />
             </div>
             <div className="flex flex-col">
               <span className="text-lg font-bold tracking-wider text-white">
@@ -120,13 +119,13 @@ export function Sidebar({ user }: SidebarProps) {
                   }`}
                 >
                   <Icon
-                    className={`h-5 w-5 shrink-0 transition-transform duration-200 group-hover:scale-110 ${
-                      isActive ? "text-sky-400 drop-shadow-[0_0_8px_rgba(56,189,248,0.6)]" : "text-slate-400"
+                    className={`h-5 w-5 shrink-0 ${
+                      isActive ? "text-sky-400" : "text-slate-400"
                     }`}
                   />
                   <span>{item.name}</span>
                   {isActive && (
-                    <span className="absolute right-0 top-1/2 hidden h-6 w-1 -translate-y-1/2 rounded-l-full bg-sky-400 shadow-[0_0_10px_#38bdf8] md:block" />
+                    <span className="absolute right-0 top-1/2 hidden h-6 w-1 -translate-y-1/2 rounded-l-full bg-sky-400 md:block" />
                   )}
                 </Link>
               );

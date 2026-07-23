@@ -3,7 +3,6 @@ import { StatCard } from "@/components/ui/StatCard";
 import { Card } from "@/components/ui/Card";
 import Link from "next/link";
 import {
-  Sparkles,
   ArrowUpRight,
   TrendingUp,
   CheckCircle2,
@@ -64,15 +63,10 @@ export async function ManagerDashboard() {
       <div className="grid gap-6 lg:grid-cols-3">
         {/* Main Welcome Card with Activity Wave Chart */}
         <div className="relative overflow-hidden lg:col-span-2 rounded-2xl border border-sky-500/30 bg-gradient-to-br from-slate-900/90 via-slate-900/70 to-slate-950/90 p-4 sm:p-6 md:p-8 backdrop-blur-2xl shadow-2xl">
-          {/* Glowing Aura Backlight */}
-          <div className="pointer-events-none absolute -left-12 -top-12 h-64 w-64 rounded-full bg-sky-500/15 blur-3xl" />
-          <div className="pointer-events-none absolute -right-12 -bottom-12 h-64 w-64 rounded-full bg-amber-500/10 blur-3xl" />
-
           <div className="relative z-10 flex flex-col justify-between h-full">
             <div>
               <div className="flex items-center justify-between">
                 <span className="inline-flex items-center gap-1.5 rounded-full bg-sky-500/15 px-3 py-1 text-xs font-semibold text-sky-400 ring-1 ring-sky-500/30">
-                  <Sparkles className="h-3.5 w-3.5 text-sky-400 animate-pulse" />
                   Operations Manager Portal
                 </span>
                 <span className="text-xs font-mono text-slate-400 border border-slate-800 rounded-lg px-2.5 py-1 bg-slate-950/50">
@@ -100,26 +94,27 @@ export async function ManagerDashboard() {
                 <svg className="h-full w-full overflow-visible" viewBox="0 0 500 100">
                   <defs>
                     <linearGradient id="gradientWave" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#38bdf8" stopOpacity="0.4" />
+                      <stop offset="0%" stopColor="#38bdf8" stopOpacity="0.25" />
                       <stop offset="100%" stopColor="#38bdf8" stopOpacity="0.0" />
                     </linearGradient>
                   </defs>
+                  <g stroke="rgba(148,163,184,0.08)" strokeWidth="1">
+                    <line x1="0" y1="25" x2="500" y2="25" />
+                    <line x1="0" y1="50" x2="500" y2="50" />
+                    <line x1="0" y1="75" x2="500" y2="75" />
+                  </g>
                   <path
                     d="M 0,80 Q 50,40 100,70 T 200,30 T 300,50 T 400,20 T 500,45"
                     fill="none"
                     stroke="#38bdf8"
-                    strokeWidth="3.5"
-                    className="drop-shadow-[0_0_10px_rgba(56,189,248,0.8)]"
+                    strokeWidth="2"
                   />
                   <path
                     d="M 0,80 Q 50,40 100,70 T 200,30 T 300,50 T 400,20 T 500,45 L 500,100 L 0,100 Z"
                     fill="url(#gradientWave)"
                   />
-                  {/* Glowing chart nodes */}
-                  <circle cx="200" cy="30" r="5" fill="#38bdf8" className="animate-ping opacity-75" />
-                  <circle cx="200" cy="30" r="4" fill="#ffffff" />
-                  <circle cx="400" cy="20" r="5" fill="#38bdf8" className="animate-ping opacity-75" />
-                  <circle cx="400" cy="20" r="4" fill="#ffffff" />
+                  <circle cx="200" cy="30" r="3" fill="#38bdf8" />
+                  <circle cx="400" cy="20" r="3" fill="#38bdf8" />
                 </svg>
               </div>
             </div>
@@ -160,7 +155,7 @@ export async function ManagerDashboard() {
                   strokeDashoffset={264 - (264 * resolutionPercentage) / 100}
                   strokeLinecap="round"
                   fill="transparent"
-                  className="transition-all duration-1000 drop-shadow-[0_0_12px_rgba(56,189,248,0.6)]"
+                  className="transition-all duration-1000"
                 />
                 <defs>
                   <linearGradient id="purpleBlueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -170,7 +165,7 @@ export async function ManagerDashboard() {
                 </defs>
               </svg>
               <div className="absolute flex flex-col items-center text-center">
-                <span className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight drop-shadow-[0_0_10px_rgba(255,255,255,0.4)]">
+                <span className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
                   {resolutionPercentage}%
                 </span>
                 <span className="text-[10px] font-medium uppercase text-slate-400 tracking-wider">
