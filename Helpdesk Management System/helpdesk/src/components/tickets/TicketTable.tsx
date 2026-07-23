@@ -90,14 +90,14 @@ export async function TicketTable({ searchParams }: TicketTableProps) {
         <table className="min-w-full divide-y divide-slate-800/80 text-left text-xs">
           <thead className="bg-slate-950/80 uppercase font-mono tracking-wider text-slate-400">
             <tr>
-              <th className="px-5 py-4">Ticket ID</th>
-              <th className="px-5 py-4">Title & Details</th>
-              <th className="px-5 py-4">Status</th>
-              <th className="px-5 py-4">Priority</th>
-              <th className="px-5 py-4">Category</th>
-              <th className="px-5 py-4">Assignee</th>
-              <th className="px-5 py-4">Created Date</th>
-              <th className="px-5 py-4 text-right">Action</th>
+              <th className="px-3 sm:px-5 py-3 sm:py-4 text-[10px] sm:text-xs">Ticket ID</th>
+              <th className="px-3 sm:px-5 py-3 sm:py-4 text-[10px] sm:text-xs">Title & Details</th>
+              <th className="px-3 sm:px-5 py-3 sm:py-4 text-[10px] sm:text-xs">Status</th>
+              <th className="px-3 sm:px-5 py-3 sm:py-4 text-[10px] sm:text-xs">Priority</th>
+              <th className="hidden sm:table-cell px-3 sm:px-5 py-3 sm:py-4 text-[10px] sm:text-xs">Category</th>
+              <th className="hidden sm:table-cell px-3 sm:px-5 py-3 sm:py-4 text-[10px] sm:text-xs">Assignee</th>
+              <th className="hidden lg:table-cell px-3 sm:px-5 py-3 sm:py-4 text-[10px] sm:text-xs">Created Date</th>
+              <th className="px-3 sm:px-5 py-3 sm:py-4 text-right text-[10px] sm:text-xs">Action</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-800/60 font-medium">
@@ -106,32 +106,32 @@ export async function TicketTable({ searchParams }: TicketTableProps) {
                 key={ticket.id}
                 className="group transition-colors hover:bg-slate-800/40"
               >
-                <td className="whitespace-nowrap px-5 py-4 font-mono font-bold text-sky-400">
+                <td className="whitespace-nowrap px-3 sm:px-5 py-3 sm:py-4 font-mono font-bold text-sky-400 text-[11px] sm:text-xs">
                   <Link href={`/tickets/${ticket.id}`} className="hover:underline">
                     {ticket.ticketNumber}
                   </Link>
                 </td>
-                <td className="px-5 py-4 max-w-xs">
+                <td className="px-3 sm:px-5 py-3 sm:py-4 max-w-[120px] sm:max-w-xs">
                   <Link
                     href={`/tickets/${ticket.id}`}
-                    className="font-semibold text-slate-100 group-hover:text-sky-300 transition-colors line-clamp-1"
+                    className="font-semibold text-slate-100 group-hover:text-sky-300 transition-colors line-clamp-1 text-[11px] sm:text-xs"
                   >
                     {ticket.title}
                   </Link>
-                  <p className="text-[11px] text-slate-500 line-clamp-1 mt-0.5">
+                  <p className="text-[10px] sm:text-[11px] text-slate-500 line-clamp-1 mt-0.5">
                     By: {ticket.createdBy.name}
                   </p>
                 </td>
-                <td className="whitespace-nowrap px-5 py-4">
+                <td className="whitespace-nowrap px-3 sm:px-5 py-3 sm:py-4">
                   <StatusBadge status={ticket.status} />
                 </td>
-                <td className="whitespace-nowrap px-5 py-4">
+                <td className="whitespace-nowrap px-3 sm:px-5 py-3 sm:py-4">
                   <PriorityBadge priority={ticket.priority} />
                 </td>
-                <td className="whitespace-nowrap px-5 py-4 text-slate-400">
+                <td className="hidden sm:table-cell whitespace-nowrap px-3 sm:px-5 py-3 sm:py-4 text-slate-400 text-[11px] sm:text-xs">
                   {formatCategory(ticket.category)}
                 </td>
-                <td className="whitespace-nowrap px-5 py-4 text-slate-300">
+                <td className="hidden sm:table-cell whitespace-nowrap px-3 sm:px-5 py-3 sm:py-4 text-slate-300 text-[11px] sm:text-xs">
                   {ticket.assignedTo?.name ? (
                     <span className="inline-flex items-center gap-1">
                       <User className="h-3 w-3 text-cyan-400" />
@@ -141,15 +141,15 @@ export async function TicketTable({ searchParams }: TicketTableProps) {
                     <span className="text-slate-500 font-mono italic">Unassigned</span>
                   )}
                 </td>
-                <td className="whitespace-nowrap px-5 py-4 text-slate-400 text-[11px]">
+                <td className="hidden lg:table-cell whitespace-nowrap px-3 sm:px-5 py-3 sm:py-4 text-slate-400 text-[10px] sm:text-[11px]">
                   {formatDate(ticket.createdAt)}
                 </td>
-                <td className="whitespace-nowrap px-5 py-4 text-right">
+                <td className="whitespace-nowrap px-3 sm:px-5 py-3 sm:py-4 text-right">
                   <Link
                     href={`/tickets/${ticket.id}`}
-                    className="inline-flex items-center gap-1 text-xs text-sky-400 hover:text-sky-300 font-semibold"
+                    className="inline-flex items-center gap-1 text-[11px] sm:text-xs text-sky-400 hover:text-sky-300 font-semibold"
                   >
-                    View <ChevronRight className="h-3.5 w-3.5" />
+                    View <ChevronRight className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
                   </Link>
                 </td>
               </tr>

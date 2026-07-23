@@ -75,11 +75,11 @@ export function TicketFilters({ userRole, users }: TicketFiltersProps) {
         )}
       </form>
 
-      <div className="flex flex-wrap gap-2 pt-2 border-t border-slate-800/60">
+      <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-2 pt-2 border-t border-slate-800/60">
         <select
           defaultValue={searchParams.get("status") || ""}
           onChange={(e) => updateFilter("status", e.target.value)}
-          className="rounded-xl border border-slate-800 bg-slate-950 px-3 py-1.5 text-xs text-slate-200 focus:border-sky-500 focus:outline-none"
+          className="rounded-xl border border-slate-800 bg-slate-950 px-3 py-1.5 text-xs text-slate-200 focus:border-sky-500 focus:outline-none w-full sm:w-auto"
         >
           <option value="">All Statuses</option>
           <option value="OPEN">Open</option>
@@ -92,7 +92,7 @@ export function TicketFilters({ userRole, users }: TicketFiltersProps) {
         <select
           defaultValue={searchParams.get("priority") || ""}
           onChange={(e) => updateFilter("priority", e.target.value)}
-          className="rounded-xl border border-slate-800 bg-slate-950 px-3 py-1.5 text-xs text-slate-200 focus:border-sky-500 focus:outline-none"
+          className="rounded-xl border border-slate-800 bg-slate-950 px-3 py-1.5 text-xs text-slate-200 focus:border-sky-500 focus:outline-none w-full sm:w-auto"
         >
           <option value="">All Priorities</option>
           <option value="LOW">Low Priority</option>
@@ -104,7 +104,7 @@ export function TicketFilters({ userRole, users }: TicketFiltersProps) {
         <select
           defaultValue={searchParams.get("category") || ""}
           onChange={(e) => updateFilter("category", e.target.value)}
-          className="rounded-xl border border-slate-800 bg-slate-950 px-3 py-1.5 text-xs text-slate-200 focus:border-sky-500 focus:outline-none"
+          className="rounded-xl border border-slate-800 bg-slate-950 px-3 py-1.5 text-xs text-slate-200 focus:border-sky-500 focus:outline-none w-full sm:w-auto"
         >
           <option value="">All Categories</option>
           <option value="IT_SUPPORT">IT Support</option>
@@ -117,7 +117,7 @@ export function TicketFilters({ userRole, users }: TicketFiltersProps) {
           <select
             defaultValue={searchParams.get("assignedTo") || ""}
             onChange={(e) => updateFilter("assignedTo", e.target.value)}
-            className="rounded-xl border border-slate-800 bg-slate-950 px-3 py-1.5 text-xs text-slate-200 focus:border-sky-500 focus:outline-none"
+            className="rounded-xl border border-slate-800 bg-slate-950 px-3 py-1.5 text-xs text-slate-200 focus:border-sky-500 focus:outline-none w-full sm:w-auto"
           >
             <option value="">All Engineers</option>
             <option value="unassigned">Unassigned</option>
@@ -132,7 +132,7 @@ export function TicketFilters({ userRole, users }: TicketFiltersProps) {
         <select
           defaultValue={searchParams.get("sort") || "newest"}
           onChange={(e) => updateFilter("sort", e.target.value)}
-          className="rounded-xl border border-slate-800 bg-slate-950 px-3 py-1.5 text-xs text-slate-200 focus:border-sky-500 focus:outline-none ml-auto"
+          className="rounded-xl border border-slate-800 bg-slate-950 px-3 py-1.5 text-xs text-slate-200 focus:border-sky-500 focus:outline-none w-full sm:w-auto sm:ml-auto"
         >
           <option value="newest">Sort: Newest First</option>
           <option value="oldest">Sort: Oldest First</option>

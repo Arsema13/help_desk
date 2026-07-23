@@ -63,7 +63,7 @@ export async function ManagerDashboard() {
       {/* Top Banner / Hero Card inspired by the screenshot */}
       <div className="grid gap-6 lg:grid-cols-3">
         {/* Main Welcome Card with Activity Wave Chart */}
-        <div className="relative overflow-hidden lg:col-span-2 rounded-2xl border border-sky-500/30 bg-gradient-to-br from-slate-900/90 via-slate-900/70 to-slate-950/90 p-6 md:p-8 backdrop-blur-2xl shadow-2xl">
+        <div className="relative overflow-hidden lg:col-span-2 rounded-2xl border border-sky-500/30 bg-gradient-to-br from-slate-900/90 via-slate-900/70 to-slate-950/90 p-4 sm:p-6 md:p-8 backdrop-blur-2xl shadow-2xl">
           {/* Glowing Aura Backlight */}
           <div className="pointer-events-none absolute -left-12 -top-12 h-64 w-64 rounded-full bg-sky-500/15 blur-3xl" />
           <div className="pointer-events-none absolute -right-12 -bottom-12 h-64 w-64 rounded-full bg-amber-500/10 blur-3xl" />
@@ -80,7 +80,7 @@ export async function ManagerDashboard() {
                 </span>
               </div>
 
-              <h1 className="mt-4 text-3xl md:text-4xl font-extrabold tracking-tight text-white">
+              <h1 className="mt-3 text-xl sm:text-2xl md:text-4xl font-extrabold tracking-tight text-white">
                 Good Evening, <span className="bg-gradient-to-r from-sky-400 via-cyan-300 to-indigo-300 bg-clip-text text-transparent">Eden Hailu</span>
               </h1>
               <p className="mt-1 text-sm text-slate-400">
@@ -127,7 +127,7 @@ export async function ManagerDashboard() {
         </div>
 
         {/* Circular Resolution Gauge Widget inspired by Focus Timer in screenshot */}
-        <div className="relative flex flex-col justify-between rounded-2xl border border-slate-800/80 bg-slate-900/60 p-6 backdrop-blur-xl shadow-2xl">
+        <div className="relative flex flex-col justify-between rounded-2xl border border-slate-800/80 bg-slate-900/60 p-4 sm:p-6 backdrop-blur-xl shadow-2xl">
           <div className="flex items-center justify-between">
             <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">
               System Resolution Rate
@@ -139,7 +139,7 @@ export async function ManagerDashboard() {
 
           {/* SVG Glowing Radial Ring Chart */}
           <div className="my-6 flex flex-col items-center justify-center">
-            <div className="relative flex h-36 w-36 items-center justify-center">
+            <div className="relative flex h-28 w-28 sm:h-36 sm:w-36 items-center justify-center">
               <svg className="h-full w-full -rotate-90 transform" viewBox="0 0 100 100">
                 <circle
                   cx="50"
@@ -170,7 +170,7 @@ export async function ManagerDashboard() {
                 </defs>
               </svg>
               <div className="absolute flex flex-col items-center text-center">
-                <span className="text-3xl font-extrabold text-white tracking-tight drop-shadow-[0_0_10px_rgba(255,255,255,0.4)]">
+                <span className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight drop-shadow-[0_0_10px_rgba(255,255,255,0.4)]">
                   {resolutionPercentage}%
                 </span>
                 <span className="text-[10px] font-medium uppercase text-slate-400 tracking-wider">
@@ -195,7 +195,7 @@ export async function ManagerDashboard() {
       </div>
 
       {/* Stat Cards Row */}
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-3 sm:gap-4 grid-cols-2 sm:grid-cols-2 lg:grid-cols-4">
         <StatCard title="Total Tickets" value={totalTickets} accent="blue" iconType="total" trend="+14% this week" />
         <StatCard title="Critical SLA" value={getPriorityValue("CRITICAL")} accent="rose" iconType="critical" trend="Immediate Action" />
         <StatCard title="High Priority" value={getPriorityValue("HIGH")} accent="amber" iconType="high" trend="Active queue" />
@@ -203,11 +203,11 @@ export async function ManagerDashboard() {
       </div>
 
       {/* Main Grid: Priority & Status Breakdown + Team Workload */}
-      <div className="grid gap-6 lg:grid-cols-3">
+      <div className="grid gap-4 sm:gap-6 lg:grid-cols-3">
         {/* Left Column: Workload & Priority Gauges */}
-        <div className="lg:col-span-2 space-y-6">
+        <div className="lg:col-span-2 space-y-4 sm:space-y-6">
           {/* Priority & Status Glass Cards */}
-          <div className="grid gap-6 sm:grid-cols-2">
+          <div className="grid gap-4 sm:gap-6 sm:grid-cols-2">
             <Card>
               <div className="flex items-center justify-between mb-4">
                 <h2 className="text-sm font-bold uppercase tracking-wider text-slate-300 flex items-center gap-2">
@@ -284,7 +284,7 @@ export async function ManagerDashboard() {
               </span>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-3">
+            <div className="grid gap-3 sm:gap-4 sm:grid-cols-3">
               {techUsers.map((tech) => {
                 const assigned = tech._count.assignedTickets;
                 const capacity = 10;
@@ -328,7 +328,7 @@ export async function ManagerDashboard() {
         </div>
 
         {/* Right Column: Recent Ticket Feed */}
-        <div className="space-y-6">
+        <div className="space-y-4 sm:space-y-6">
           <Card className="h-full flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-4">

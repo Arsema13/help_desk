@@ -28,7 +28,7 @@ export async function EmployeeDashboard() {
   return (
     <div className="space-y-6">
       {/* Banner */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 rounded-2xl border border-sky-500/20 bg-slate-900/60 p-6 backdrop-blur-xl shadow-xl">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 rounded-2xl border border-sky-500/20 bg-slate-900/60 p-4 sm:p-6 backdrop-blur-xl shadow-xl">
         <div>
           <div className="flex items-center gap-2 text-sky-400">
             <LifeBuoy className="h-5 w-5" />
@@ -49,7 +49,7 @@ export async function EmployeeDashboard() {
         </Link>
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-3">
+      <div className="grid gap-3 sm:gap-4 grid-cols-2 sm:grid-cols-3">
         <StatCard title="My Total Requests" value={myTickets.length} accent="blue" iconType="total" />
         <StatCard title="Active In-Progress" value={activeCount} accent="amber" iconType="open" />
         <StatCard title="Resolved Requests" value={resolvedCount} accent="emerald" iconType="success" />
@@ -83,7 +83,7 @@ export async function EmployeeDashboard() {
                 href={`/tickets/${ticket.id}`}
                 className="block group rounded-xl border border-slate-800/80 bg-slate-950/40 p-4 transition-all hover:border-sky-500/40 hover:bg-slate-900/60"
               >
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-3">
                   <div className="flex items-center gap-3">
                     <span className="font-mono text-xs font-bold text-sky-400">
                       {ticket.ticketNumber}

@@ -76,7 +76,7 @@ export async function TicketDetail({ ticketId }: TicketDetailProps) {
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
         <div>
           <Link
             href="/tickets"
@@ -84,11 +84,11 @@ export async function TicketDetail({ ticketId }: TicketDetailProps) {
           >
             <ArrowLeft className="h-3.5 w-3.5" /> Back to tickets list
           </Link>
-          <div className="mt-2 flex items-center gap-3">
-            <span className="font-mono text-xs font-bold text-sky-400 px-2 py-0.5 rounded bg-sky-500/10 border border-sky-500/30">
+          <div className="mt-2 flex flex-col sm:flex-row sm:items-center gap-1.5 sm:gap-3">
+            <span className="self-start sm:self-auto font-mono text-xs font-bold text-sky-400 px-2 py-0.5 rounded bg-sky-500/10 border border-sky-500/30 shrink-0">
               {ticket.ticketNumber}
             </span>
-            <h1 className="text-xl md:text-2xl font-bold text-white">
+            <h1 className="text-base sm:text-xl md:text-2xl font-bold text-white">
               {ticket.title}
             </h1>
           </div>
@@ -99,8 +99,8 @@ export async function TicketDetail({ ticketId }: TicketDetailProps) {
         </div>
       </div>
 
-      <div className="grid gap-6 lg:grid-cols-3">
-        <div className="lg:col-span-2 space-y-6">
+      <div className="grid gap-4 sm:gap-6 lg:grid-cols-3">
+        <div className="lg:col-span-2 space-y-4 sm:space-y-6">
           <Card>
             <h2 className="mb-3 text-sm font-bold uppercase tracking-wider text-slate-300">
               Description
@@ -125,21 +125,21 @@ export async function TicketDetail({ ticketId }: TicketDetailProps) {
                     key={comment.id}
                     className="rounded-xl border border-slate-800/80 bg-slate-950/60 p-4 transition-all hover:border-slate-700/80"
                   >
-                    <div className="flex items-center justify-between mb-2">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-2 mb-2">
                       <div className="flex items-center gap-2">
-                        <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-tr from-sky-600 to-cyan-400 text-[10px] font-bold text-white">
+                        <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-tr from-sky-600 to-cyan-400 text-[10px] font-bold text-white shrink-0">
                           {getInitials(comment.user.name)}
                         </div>
-                        <div>
-                          <span className="text-xs font-bold text-slate-200">
+                        <div className="min-w-0">
+                          <span className="text-xs font-bold text-slate-200 truncate block">
                             {comment.user.name}
                           </span>
-                          <span className="ml-2 text-[10px] text-sky-400 font-medium">
-                            • {formatRole(comment.user.role)}
+                          <span className="text-[10px] text-sky-400 font-medium">
+                            {formatRole(comment.user.role)}
                           </span>
                         </div>
                       </div>
-                      <span className="text-[11px] text-slate-500">
+                      <span className="text-[11px] text-slate-500 shrink-0">
                         {formatDate(comment.createdAt)}
                       </span>
                     </div>
@@ -157,7 +157,7 @@ export async function TicketDetail({ ticketId }: TicketDetailProps) {
           </Card>
         </div>
 
-        <div className="space-y-6">
+        <div className="space-y-4 sm:space-y-6">
           <Card>
             <h2 className="mb-4 text-sm font-bold uppercase tracking-wider text-slate-300">
               Ticket Details

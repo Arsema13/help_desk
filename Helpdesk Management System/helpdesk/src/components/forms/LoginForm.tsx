@@ -45,41 +45,41 @@ export function LoginForm() {
 
   return (
     <div className="space-y-6">
-      {/* Quick Ethiopian Demo Login Presets */}
+      {/* Quick Demo Login Presets */}
       <div className="rounded-2xl border border-sky-500/20 bg-slate-900/60 p-4 backdrop-blur-xl">
         <span className="text-[11px] font-bold uppercase tracking-wider text-sky-400 flex items-center gap-1.5 mb-2.5">
-          <Sparkles className="h-3.5 w-3.5 text-sky-400 animate-pulse" /> 1-Click Demo Ethiopian Logins
+          <Sparkles className="h-3.5 w-3.5 text-sky-400 animate-pulse" /> 1-Click Demo Logins
         </span>
 
-        <div className="grid gap-2 sm:grid-cols-3">
+        <div className="grid grid-cols-3 gap-1.5 sm:gap-2">
           <button
             type="button"
             onClick={() => fillQuickLogin("manager1@company.com")}
-            className="flex flex-col items-center justify-center rounded-xl border border-sky-500/30 bg-sky-500/10 p-2.5 hover:bg-sky-500/20 transition-all text-center group"
+            className="flex flex-col items-center justify-center rounded-xl border border-sky-500/30 bg-sky-500/10 p-1.5 sm:p-2.5 hover:bg-sky-500/20 transition-all text-center group"
           >
-            <Shield className="h-4 w-4 text-sky-400 mb-1 group-hover:scale-110 transition-transform" />
-            <span className="text-xs font-bold text-white">Eden Hailu</span>
-            <span className="text-[10px] text-sky-300">Manager</span>
+            <Shield className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-sky-400 mb-0.5 sm:mb-1 group-hover:scale-110 transition-transform" />
+            <span className="text-[10px] sm:text-xs font-bold text-white leading-tight">Eden Hailu</span>
+            <span className="text-[9px] sm:text-[10px] text-sky-300">Manager</span>
           </button>
 
           <button
             type="button"
             onClick={() => fillQuickLogin("tech2@company.com")}
-            className="flex flex-col items-center justify-center rounded-xl border border-purple-500/30 bg-purple-500/10 p-2.5 hover:bg-purple-500/20 transition-all text-center group"
+            className="flex flex-col items-center justify-center rounded-xl border border-purple-500/30 bg-purple-500/10 p-1.5 sm:p-2.5 hover:bg-purple-500/20 transition-all text-center group"
           >
-            <Wrench className="h-4 w-4 text-purple-400 mb-1 group-hover:scale-110 transition-transform" />
-            <span className="text-xs font-bold text-white">Selamawit</span>
-            <span className="text-[10px] text-purple-300">Technical</span>
+            <Wrench className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-purple-400 mb-0.5 sm:mb-1 group-hover:scale-110 transition-transform" />
+            <span className="text-[10px] sm:text-xs font-bold text-white leading-tight">Selamawit</span>
+            <span className="text-[9px] sm:text-[10px] text-purple-300">Technical</span>
           </button>
 
           <button
             type="button"
             onClick={() => fillQuickLogin("emp1@company.com")}
-            className="flex flex-col items-center justify-center rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-2.5 hover:bg-emerald-500/20 transition-all text-center group"
+            className="flex flex-col items-center justify-center rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-1.5 sm:p-2.5 hover:bg-emerald-500/20 transition-all text-center group"
           >
-            <User className="h-4 w-4 text-emerald-400 mb-1 group-hover:scale-110 transition-transform" />
-            <span className="text-xs font-bold text-white">Almaz Ayana</span>
-            <span className="text-[10px] text-emerald-300">Employee</span>
+            <User className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-emerald-400 mb-0.5 sm:mb-1 group-hover:scale-110 transition-transform" />
+            <span className="text-[10px] sm:text-xs font-bold text-white leading-tight">Almaz Ayana</span>
+            <span className="text-[9px] sm:text-[10px] text-emerald-300">Employee</span>
           </button>
         </div>
       </div>

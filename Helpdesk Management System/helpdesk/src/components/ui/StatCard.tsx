@@ -75,8 +75,8 @@ export function StatCard({
         </div>
       </div>
 
-      <div className="mt-4 flex items-baseline justify-between">
-        <p className={`text-4xl font-extrabold tracking-tight ${accentStyles.glow}`}>
+      <div className="mt-3 sm:mt-4 flex items-baseline justify-between">
+        <p className={`text-2xl sm:text-4xl font-extrabold tracking-tight ${accentStyles.glow}`}>
           {value}
         </p>
       </div>
